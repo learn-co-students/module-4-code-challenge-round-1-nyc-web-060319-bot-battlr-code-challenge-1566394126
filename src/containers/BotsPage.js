@@ -1,5 +1,6 @@
 import React from "react";
 import BotCollection from "./BotCollection"
+import YourBotArmy from "./YourBotArmy"
 
 class BotsPage extends React.Component {
   //start here with your code for step one
@@ -13,11 +14,21 @@ class BotsPage extends React.Component {
     // .then(json => console.log(json))
     .then(json => this.setState({bots: json}))
   }
-  clickHandler = (botToAdd) =>{
-    // console.log(botToAdd)
-    this.state.yourBotArmy.includes(botToAdd) ? null 
-    :this.setState({yourBotArmy: [...this.state.yourBotArmy, botToAdd]})
+
+  removeBotAndReturnNewArray = (array, bot) => {
+    array.splice(array.indexOf(bot),1)
+    return array
   }
+
+  clickHandler = (bot) =>{
+    // console.log(bot)
+    this.state.yourBotArmy.includes(bot) ? this.setState({yourBotArmy: this.removeBotAndReturnNewArray(this.state.yourBotArmy, bot)})
+    :this.setState({yourBotArmy: [...this.state.yourBotArmy, bot]})
+  }
+
+  // enlistedIsGreen = (bot) =>{
+  //   this.state.yourBotArmy.includes(bot)? "turn it green" : null
+  // }
   
   render() {
     
@@ -26,7 +37,8 @@ class BotsPage extends React.Component {
     console.log("yourBotArmy", this.state.yourBotArmy)
     return (
       <div className="bots-page">
-      <BotCollection bots = {this.state.bots} clickHandler = {this.clickHandler}/>
+        <BotCollection bots = {this.state.bots} clickHandler = {this.clickHandler}/>
+        <YourBotArmy yourBotArmy = {this.state.yourBotArmy} clickHandler = {this.clickHandler}/>
       </div>
     );
   }
