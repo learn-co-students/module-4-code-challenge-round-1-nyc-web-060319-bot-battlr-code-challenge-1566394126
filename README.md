@@ -2,7 +2,11 @@
 
 Welcome to __Bot Battlr__, the one and only spot in the known universe where you can custom build your own Bot Army!
 
-Here's the scenario: a galactic overlord has hired you, a galactic web developer, to develop a galactic web app that will allow them to browse through a list of robots, view a robot's details, and, if the bot is to their liking, enlist that bot into their army.
+Here's the scenario: a galactic overlord has hired you, a galactic web developer, to develop a galactic web app that will allow them 
+
+TO BROWSE THROUGH A LIST OF ROBOTS, 
+VIEW A ROBOT'S DETAILS, 
+AND, ENLIST THAT BOT INTO THEIR ARMY.
 
 All of the code to style the page has been written for you, meaning that you should be adding to the code rather than editing it; your main responsibility will be to get information, render it into the right containers, and build out the page's functionality. Try your best to find the right places to insert code into the established code base, but if your finished product has some styling issues, don't worry too much about it.
 
@@ -46,6 +50,7 @@ Based on the current structure of the app, think about where this array of bots 
 #### 2.  Indexing bots
 
 After you have fetched the bots, work on rendering them into `BotCollection`, which should be a child of `BotsPage`. A component called `BotCard` has been provided to you to display the information about an individual bot in a list format.
+<!-- There's no ul's or li's on this page??? -->
 
 
 #### 3.  Enlisting bots

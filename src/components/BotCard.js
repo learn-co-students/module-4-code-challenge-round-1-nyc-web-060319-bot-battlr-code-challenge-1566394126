@@ -1,5 +1,9 @@
 import React from "react";
 
+// it receives bot {id: "", armor: #, etc}
+//from BotCollection
+// and clickHandler (fxn to BotsPage.setState of yourBotArmy)
+
 const BotCard = props => {
   const { bot } = props;
 
@@ -24,7 +28,7 @@ const BotCard = props => {
       <div
         className="ui card"
         key={bot.id}
-        onClick={() => console.log("add code to connect event listener")}
+        onClick={() => props.clickHandler(bot)}
       >
         <div className="image">
           <img alt="oh no!" src={bot.avatar_url} />
